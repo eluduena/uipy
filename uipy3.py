@@ -14,8 +14,9 @@ def uipy3_load_file(filename):
 
 if __name__ == "__main__":
     uipy3_filename = "default.uipy3"
+    
     if len(sys.argv) == 2 :
-        uipy3_filename == sys.argv[1] + ".uipy3"
+        uipy3_filename = sys.argv[1]
     
     things = uipy3_load_file(uipy3_filename)
     
