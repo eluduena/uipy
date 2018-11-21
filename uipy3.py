@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import sys
 from IPython import embed
+
 
 def uipy3_load_file(filename):
     f = open(filename, "r")
@@ -10,11 +12,17 @@ def uipy3_load_file(filename):
             t.append(l)
     return t
 
-things = uipy3_load_file("home.uipy3")
-
-for thing in things:
+if __name__ == "__main__":
+    uipy3_filename = "default.uipy3"
+    if len(sys.argv) == 2 :
+        uipy3_filename == sys.argv[1] + ".uipy3"
     
-    exec(thing)
-
-print ("uipy -> home.uipy3")
-embed()
+    things = uipy3_load_file(uipy3_filename)
+    
+    for thing in things:
+        
+        exec(thing)
+    
+    print ("uipy -> " + uipy3_filename)
+    
+    embed()
