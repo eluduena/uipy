@@ -4,7 +4,7 @@ from IPython import embed
 
 
 def uipy3_load_file(filename):
-    f = open(filename, "r")
+    f = open(filename, "r+")
     t = []
     
     for l in f:
@@ -13,7 +13,7 @@ def uipy3_load_file(filename):
     return t
 
 if __name__ == "__main__":
-    uipy3_filename = "default.uipy3"
+    uipy3_filename = ".default.uipy3"
     
     if len(sys.argv) == 2 :
         uipy3_filename = sys.argv[1]
