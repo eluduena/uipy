@@ -18,11 +18,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 2 :
         uipy3_filename = sys.argv[1]
     
-    things = uipy3_load_file(uipy3_filename)
-    
-    for thing in things:
-        
-        exec(thing)
+    exec(open(uipy3_filename).read())
     
     print ("uipy -> " + uipy3_filename)
     
