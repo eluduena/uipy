@@ -3,15 +3,6 @@ import sys
 from IPython import embed
 
 
-def uipy3_load_file(filename):
-    f = open(filename, "r+")
-    t = []
-    
-    for l in f:
-        if l != "\n" or l != "" :
-            t.append(l)
-    return t
-
 if __name__ == "__main__":
     uipy3_filename = ".default.uipy3"
     
