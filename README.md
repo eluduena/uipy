@@ -7,4 +7,4 @@ upy3 .namefile.uipy3
 
 or
 
-you can use it with -s to list and select a file from the directory ~ / uipy3
+you can use it with -s to list and select a file from the directory ~/uipy3
