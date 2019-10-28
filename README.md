@@ -1,11 +1,10 @@
 # uipy3
 
-this script executes .default.uipy3 in the working directory and then leaves an ipython running.
+the script runs .defailt.uipy3 in the current directory and then leaves an ipython running.
 
-If you wish, you can do it with a custom file such as .namefile.uipy3 and save it in the working directory and then you can use it with
-
-upy3 namefile
+If you wish, you can use it with a custom file such as .namefile.uipy3 and save it in the current directory and then use it with:
+upy3 .namefile.uipy3
 
 or
 
-you can use -s to show files in your home/user/uipy3 directory and select
+you can use it with -s to list and select a file from the directory ~ / uipy3
