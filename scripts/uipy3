@@ -10,23 +10,23 @@ from IPython import embed
 
 if __name__ == "__main__":
     
-    uipy3_filename = ""
+    uipy_filename = ""
     
     if len(sys.argv) == 2 :
         
         if isfile(sys.argv[1]):
-            uipy3_filename = sys.argv[1]
+            uipy_filename = sys.argv[1]
         else:
             if "-h" == sys.argv[1] or "h" == sys.argv[1]:
-                print ("-h this help\n-s select scrips\nfilename.uipy3 direct load this file")
+                print ("-h this help\n-s select scrips\nfilename.uipy direct load this file")
                 exit(0)
                 
             if "-s" == sys.argv[1]:
                 userdir = expanduser("~/")
-                if not exists(userdir + "uipy3/"):
-                    system("mkdir " + userdir + "uipy3")
+                if not exists(userdir + "uipy/"):
+                    system("mkdir " + userdir + "uipy")
                 
-                l = listdir(userdir + "uipy3/")
+                l = listdir(userdir + "uipy/")
                 d = {}
                 print(l)
                 for i in range(len(l)):
@@ -34,19 +34,19 @@ if __name__ == "__main__":
                 
                 print(d)
                 f = input("seleccione el archivo: ")
-                uipy3_filename = userdir + "uipy3/" + d[int(f)] 
+                uipy_filename = userdir + "uipy/" + d[int(f)] 
                 
     if len(sys.argv) == 1:
-        uipy3_filename = ".default.uipy3"
-        if isfile(uipy3_filename):
-            filename = uipy3_filename
+        uipy_filename = ".default.uipy"
+        if isfile(uipy_filename):
+            filename = uipy_filename
         else:
-            print ("creating "+ uipy3_filename)
-            f = open(uipy3_filename,"w")
+            print ("creating "+ uipy_filename)
+            f = open(uipy_filename,"w")
             f.close
-            filename = uipy3_filename
+            filename = uipy_filename
     
-    if uipy3_filename != "":
-        print ("uipy -> " + uipy3_filename)
-        exec(open(uipy3_filename).read())
+    if uipy_filename != "":
+        print ("uipy -> " + uipy_filename)
+        exec(open(uipy_filename).read())
         embed()
